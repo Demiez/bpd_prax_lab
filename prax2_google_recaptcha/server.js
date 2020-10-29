@@ -5,11 +5,14 @@ const request = require('request');
 const app = express();
 const PORT = process.env.PORT;
 
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
+  res.render('index', {
+    site_key: process.env.SITE_KEY,
+  });
 });
 
 app.post('/register', (req, res) => {
