@@ -22,9 +22,9 @@ app.post('/register', (req, res) => {
       .json({ success: false, message: 'Будь-ласка оберіть каптчу' });
   }
 
-  const verifyUrl = `https://google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${res.body.captcha}&remoteip=${req.connection.remoteAddress}`;
+  const verifyUrl = `https://google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
 
-  request(verifyUrl, (err, res, body) => {
+  request(verifyUrl, (err, response, body) => {
     body = JSON.parse(body);
 
     if (!body.success) {

@@ -39,5 +39,36 @@
         <input type="submit" value="Submit" class="btn btn-primary" />
       </form>
     </div>
+
+    <script>
+      document
+        .getElementById('registrationForm')
+        .addEventListener('submit', submitForm);
+      function submitForm(e) {
+        e.preventDefault();
+
+        const name = document.querySelector('#name').value;
+        const password = document.querySelector('#password').value;
+        const email = document.querySelector('#email').value;
+        const captcha = document.querySelector('#g-recaptcha-response').value;
+        console.log(captcha);
+
+        fetch('/register', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({ name, password, email, captcha }),
+        })
+          .then((res) => res.json())
+          .then((data) =>
+            alert(`
+            Статус: ${data.success ? 'Успіх' : 'Помилка'}
+            Повідомлення: ${data.message}
+          `)
+          );
+      }
+    </script>
   </body>
 </html>
