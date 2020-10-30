@@ -51,7 +51,6 @@
         const password = document.querySelector('#password').value;
         const email = document.querySelector('#email').value;
         const captcha = document.querySelector('#g-recaptcha-response').value;
-        console.log(captcha);
 
         fetch('/register', {
           method: 'POST',
