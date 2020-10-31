@@ -1,4 +1,5 @@
-const { BlockChain } = require('./structure/blockChain');
+const { BlockChain } = require('./modules/module.blockchain/blockChain');
+const { saveData } = require('./modules/module.fs/fs_service');
 
 const blockChain = new BlockChain();
 blockChain.addBlock({ user: 'Andrew', money: 100 });

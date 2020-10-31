@@ -6,10 +6,10 @@ class Block {
     this.timestamp = Date.now();
     this.userData = userData;
     this.previousBlockHash = previousBlockHash;
-    this.hash = this.createHash();
+    this.hash = this.getHash();
   }
 
-  createHash() {
+  getHash() {
     const { index, timestamp, userData, previousBlockHash } = this;
     const blockString = `${index}-${timestamp}-${userData}-${previousBlockHash}`;
     const hash = crypto.createHash('sha256').update(blockString).digest('hex');
