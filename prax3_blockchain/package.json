@@ -2,19 +2,16 @@
   "name": "prax3_blockchain",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dmytro Petrenko",
   "license": "ISC",
   "dependencies": {
     "chalk": "^3.0.0",
     "uuid": "^8.3.1",
     "yargs": "^16.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
   }
 }
