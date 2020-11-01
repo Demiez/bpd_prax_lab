@@ -1,6 +1,7 @@
 const chalk = require('chalk');
+const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
-const { Block } = require('./block');
+const { Block, hashFunction } = require('./block');
 const { Auth } = require('./auth');
 const { saveData, loadData, saveKeys } = require('../module.fs/fs_service');
 const datatypes = require('../module.fs/constants');
@@ -35,37 +36,47 @@ class BlockChain {
       return true;
     }
 
-    this.chain.forEach((block, i) => {
-      if (block.hash !== block.getHash) {
-        return false;
-      }
-      if (block.previousBlockHash !== this.chain[i - 1].hash) {
-        return false;
-      }
-    });
+    return this.chain.every((block, i) => {
+      const { index, timestamp, userData, previousBlockHash } = block;
+      const checkedBlockHash = hashFunction(
+        index,
+        timestamp,
+        userData,
+        previousBlockHash
+      );
 
-    return true;
+      if (block.hash !== checkedBlockHash) {
+        return false;
+      }
+      if (i > 0 && block.previousBlockHash !== this.chain[i - 1].hash) {
+        return false;
+      }
+
+      return true;
+    });
   }
 
   authenticate(publicKey, privateKey) {
     const isUserValid = this.keys[publicKey].privateKey === privateKey;
 
     if (!isUserValid) {
-      throw new Error(chalk.red('Такого користувача немає'));
+      throw new Error('Такого користувача немає');
     }
 
     const isChainIntegral = this.checkChainIntegrity();
 
     if (!isChainIntegral) {
-      throw new Error(chalk.red('Цілісніть даних порушена'));
+      throw new Error('Цілісніть даних порушена');
     }
   }
 
   readBlock(publicKey, privateKey) {
-    this.authenticate(publicKey, privateKey);
-
-    console.log(chalk.yellow.inverse('Доступ до блоку надано:'));
-    return this.chain[publicKey].userData;
+    try {
+      this.authenticate(publicKey, privateKey);
+      return this.chain[publicKey].userData;
+    } catch (error) {
+      console.log(chalk.red(error));
+    }
   }
 
   addTransaction() {}

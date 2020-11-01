@@ -1,16 +1,1 @@
-[
-  {
-    "index": 0,
-    "timestamp": 1604206884523,
-    "userData": { "user": "Andrew", "money": 100 },
-    "previousBlockHash": 0,
-    "hash": "bd427d9c21155127a427aa323548a84dc51a97147221abeca43638ef73ea5177"
-  },
-  {
-    "index": 1,
-    "timestamp": 1604206884546,
-    "userData": { "user": "Dmytro", "money": 200 },
-    "previousBlockHash": "bd427d9c21155127a427aa323548a84dc51a97147221abeca43638ef73ea5177",
-    "hash": "1d339b2ad68dceddbce07abade17555276aec2ca95dfd5f7c573cffe16dee670"
-  }
-]
+[{"index":0,"timestamp":1604215220513,"userData":{"user":"Andrew","money":200},"previousBlockHash":0,"hash":"75ba9f9cf38e5db3f810172e1ae180c9a74db0be4569536efb4e3dcdcaa49ef4"},{"index":1,"timestamp":1604215410480,"userData":{"user":"Dmytro","money":500},"previousBlockHash":"75ba9f9cf38e5db3f810172e1ae180c9a74db0be4569536efb4e3dcdcaa49ef4","hash":"88eefe9594aff9b1839e191e1406736a1d0bede14a9b51e23e85d0cab54f789e"}]

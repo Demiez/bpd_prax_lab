@@ -24,14 +24,15 @@ const saveKeys = (keys) => {
 };
 
 const loadData = (dataType) => {
-  console.log(chalk.green.inverse('Іде завантаження даних...\n'));
   try {
     if (dataType === dataTypes.DATA) {
+      console.log(chalk.green.inverse('Іде завантаження даних...\n'));
       const dataBuffer = fs.readFileSync('data/data.json');
       const dataJSON = dataBuffer.toString();
       return JSON.parse(dataJSON);
     }
     if (dataType === dataTypes.KEYS) {
+      console.log(chalk.green.inverse('Іде завантаження ключей...\n'));
       const dataBuffer = fs.readFileSync('data/keys.json');
       const keysJSON = dataBuffer.toString();
       return JSON.parse(keysJSON);

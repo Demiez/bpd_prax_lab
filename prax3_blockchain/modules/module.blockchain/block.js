@@ -1,5 +1,12 @@
 const crypto = require('crypto');
 
+const hashFunction = (index, timestamp, userData, previousBlockHash) => {
+  const blockString = `${index}-${timestamp}-${JSON.stringify(
+    userData
+  )}-${previousBlockHash}`;
+  return crypto.createHash('sha256').update(blockString).digest('hex');
+};
+
 class Block {
   constructor(index, userData, previousBlockHash) {
     this.index = index;
@@ -11,10 +18,9 @@ class Block {
 
   getHash() {
     const { index, timestamp, userData, previousBlockHash } = this;
-    const blockString = `${index}-${timestamp}-${userData}-${previousBlockHash}`;
-    const hash = crypto.createHash('sha256').update(blockString).digest('hex');
+    const hash = hashFunction(index, timestamp, userData, previousBlockHash);
     return hash;
   }
 }
 
-module.exports = { Block };
+module.exports = { Block, hashFunction };
