@@ -1,5 +1,4 @@
 const chalk = require('chalk');
-const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
 const { Block } = require('./block');
 const { Auth } = require('./auth');
