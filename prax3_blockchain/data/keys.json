@@ -1,1 +1,22 @@
-[{"name":"Andrew","publicKey":0,"privateKey":"e321acaf-60b9-4f9b-aaae-a53ee9d4cc40"},{"name":"Dmytro","publicKey":1,"privateKey":"d928adae-5f6c-4c2c-a28e-7b66c754f00b"}]
+[
+  {
+    "name": "Andrew",
+    "publicKey": 0,
+    "privateKey": "c438245e-d540-422d-bf8d-d55636d6ffbb"
+  },
+  {
+    "name": "Dmytro",
+    "publicKey": 1,
+    "privateKey": "1c05f4a0-d2c2-422f-8750-2b130d006925"
+  },
+  {
+    "name": "Pavel",
+    "publicKey": 2,
+    "privateKey": "1f974192-c156-4e03-af94-f563b4c61c8c"
+  },
+  {
+    "name": "Olga",
+    "publicKey": 3,
+    "privateKey": "edd68d9b-e837-4427-ba01-7b5fbf78d570"
+  }
+]

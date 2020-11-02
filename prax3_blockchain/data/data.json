@@ -1,16 +1,30 @@
 [
   {
     "index": 0,
-    "timestamp": 1604223059101,
+    "timestamp": 1604302704082,
     "userData": { "user": "Andrew", "money": 100 },
     "previousBlockHash": 0,
-    "hash": "612dcdaa1e6e8ecec3b1f5093c484a98208003571f4bc2dd183473a36a1d9866"
+    "hash": "e7cfc098d51ea6bb394a18b8ee68930b923c73e7e9984dd9666f41270873bbe3"
   },
   {
     "index": 1,
-    "timestamp": 1604223064229,
+    "timestamp": 1604302888100,
     "userData": { "user": "Dmytro", "money": 200 },
-    "previousBlockHash": "612dcdaa1e6e8ecec3b1f5093c484a98208003571f4bc2dd183473a36a1d9866",
-    "hash": "d26bc25248bb8935667a36293141e7ba7c27c3f4625d6e0337d2fa68d48cb161"
+    "previousBlockHash": "e7cfc098d51ea6bb394a18b8ee68930b923c73e7e9984dd9666f41270873bbe3",
+    "hash": "0ea63770f0c50f9052f000c150de7db0a7b365bc617809e45c99c9d0af167814"
+  },
+  {
+    "index": 2,
+    "timestamp": 1604304107698,
+    "userData": { "user": "Pavel", "money": 200 },
+    "previousBlockHash": "0ea63770f0c50f9052f000c150de7db0a7b365bc617809e45c99c9d0af167814",
+    "hash": "fd00b3f3bb7fa6e6d83e82e5bc2ba17023d7a0398623c1ef65988765146a7840"
+  },
+  {
+    "index": 3,
+    "timestamp": 1604304142516,
+    "userData": { "user": "Olga", "money": 400 },
+    "previousBlockHash": "fd00b3f3bb7fa6e6d83e82e5bc2ba17023d7a0398623c1ef65988765146a7840",
+    "hash": "537ff0f24a4426682e904a5c17afffce1ceaabe53ad0a79a282f0da7e2b05438"
   }
 ]
