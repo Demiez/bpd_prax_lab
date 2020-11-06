@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8" />
+    <title>Шифрування DES</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./script/des-main.js"></script>
+    <script src="./script/des-keys.js"></script>
+    <script src="./script/main.js"></script>
+  </head>
+  <body onload="nowLoaded();">
+    <h2 class="title">Алгоритм Шифрування DES</h2>
+
+    <div>
+      <label for="key">Введіть ключ:</label><br />
+      <input
+        class="input-area"
+        type="text"
+        id="key"
+        onfocus="ce();"
+        onblur="ce();"
+        onkeydown="ce();"
+      />
+      <br />
+      <label for="input">Введені дані:</label><br />
+      <textarea
+        class="input-area"
+        id="input"
+        rows="3"
+        cols="80"
+        onfocus="ce();"
+        onblur="ce();"
+        onkeydown="ce();"
+      ></textarea>
+      <br />
+      <input
+        type="button"
+        id="encbut"
+        value="Шифрувати"
+        onclick="encrypt_string();"
+      />
+      <input
+        type="button"
+        id="decbut"
+        value="Розшифрувати"
+        onclick="decrypt_string();"
+      />
+      <div>
+        <label for="vector">Додати вектор ініціалізації (IV):</label>
+        <input
+          type="text"
+          id="vector"
+          size="16"
+          onfocus="ce();"
+          onblur="ce();"
+          onkeydown="ce();"
+        />
+      </div>
+      <br />
+      <label for="output">Виведені дані:</label><br />
+      <textarea
+        class="input-area"
+        id="output"
+        rows="3"
+        cols="80"
+        onfocus="ce();"
+        onblur="ce();"
+        onkeydown="ce();"
+      ></textarea>
+    </div>
+  </body>
+</html>

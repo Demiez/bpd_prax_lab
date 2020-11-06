@@ -1,0 +1,44 @@
+body {
+  color: #333;
+  font-family: Monospace;
+  background-color: #ddd;
+  margin: 10px;
+  font-size: 9pt;
+}
+input,
+textarea {
+  font-family: Monospace;
+  font-size: 9pt;
+}
+a,
+img.a {
+  border-width: 0px;
+  color: #00f;
+  text-decoration: none;
+}
+.extlink {
+  color: #f00;
+}
+h1 {
+  font-size: 1.5em;
+  color: #000;
+}
+h2 {
+  font-size: 1.2em;
+  margin: 1px;
+  padding: 5px;
+  color: #000;
+}
+h3 {
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #000;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.input-area {
+  width: 30%;
+}
