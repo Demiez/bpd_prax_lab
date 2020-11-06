@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset=UTF-8" />
+    <meta charset="UTF-8" />
     <title>Шифрування DES</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./script/des.main.module.js"></script>
     <script src="./script/des.keys.module.js"></script>
     <script src="./script/main.js"></script>
   </head>
-  <body onload="nowLoaded();">
+  <body>
     <h2 class="title">Алгоритм Шифрування DES</h2>
 
     <div>
       <label for="key">Введіть ключ:</label><br />
-      <input
-        class="input-area"
-        type="text"
-        id="key"
-        onfocus="ce();"
-        onblur="ce();"
-        onkeydown="ce();"
-      />
+      <input class="input-area" type="text" id="key" />
       <br />
       <label for="input">Введені дані:</label><br />
-      <textarea
-        class="input-area"
-        id="input"
-        rows="3"
-        cols="80"
-        onfocus="ce();"
-        onblur="ce();"
-        onkeydown="ce();"
-      ></textarea>
+      <textarea class="input-area" id="input" rows="3" cols="80"></textarea>
       <br />
       <input
         type="button"
@@ -47,26 +32,11 @@
       />
       <div>
         <label for="vector">Додати вектор ініціалізації (IV):</label>
-        <input
-          type="text"
-          id="vector"
-          size="16"
-          onfocus="ce();"
-          onblur="ce();"
-          onkeydown="ce();"
-        />
+        <input type="text" id="vector" size="16" />
       </div>
       <br />
       <label for="output">Виведені дані:</label><br />
-      <textarea
-        class="input-area"
-        id="output"
-        rows="3"
-        cols="80"
-        onfocus="ce();"
-        onblur="ce();"
-        onkeydown="ce();"
-      ></textarea>
+      <textarea class="input-area" id="output" rows="3" cols="80"></textarea>
     </div>
   </body>
 </html>
