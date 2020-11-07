@@ -1,0 +1,28 @@
+body {
+  color: #333;
+  font-family: Monospace;
+  background-color: #ddd;
+  margin: 10px;
+  font-size: 9pt;
+}
+.encrypt-wrapper {
+  width: 45vw;
+}
+
+.decrypt-wrapper {
+  width: 45vw;
+}
+
+.title {
+  font-size: 24px;
+}
+
+#encrypt-button,
+#decrypt-button {
+  width: 108px;
+  font-family: Monospace;
+}
+
+#cipher {
+  min-height: 22px;
+}
