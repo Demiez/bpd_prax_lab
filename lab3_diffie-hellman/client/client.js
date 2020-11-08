@@ -1,4 +1,4 @@
-const symmetric = require('../modules/symmetric.module');
+const keys = require('../modules/keys.module');
 const DH = require('../modules/diffie.hellman.module');
 const yargs = require('yargs');
 const io = require('socket.io-client');
@@ -33,11 +33,9 @@ let currentChannel = 'plain-text';
 let userInputEnabled = false;
 let programStarted = false;
 
-const symmetricKey = symmetric.getSecretKey();
 let encryptionMethods = {
   'plain-text': input => input,
   'diffie-hellman': undefined,
-  'symmetric-encryption': input => symmetric.xorWithKey(input, symmetricKey),
 };
 
 socket.on('connect', () => {
@@ -67,7 +65,7 @@ socket.on('connect', () => {
 
     // Встановити метод шифрування
     encryptionMethods['diffie-hellman'] = input =>
-      symmetric.xorWithKey(input, diffieHellmanKey);
+      keys.xorWithKey(input, diffieHellmanKey);
 
     setUpSocketChannels(socket);
     console.log('Для списку доступних команд наберіть ":help"');

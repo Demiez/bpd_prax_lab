@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-const symmetric = require('../modules/symmetric.module');
+const keys = require('../modules/keys.module');
 const DH = require('../modules/diffie.hellman.module');
 
 // Аргументи командної стрічки
@@ -27,9 +27,6 @@ const getGEaHLine = () => {
   if (!line) return getGEaHLine();
   return line;
 }
-
-// Завантажимо сим ключ із файла
-const symmetricKey = symmetric.getSecretKey('server');
 
 io.on('connection', socket => {
   console.log(
@@ -79,30 +76,16 @@ function enableChannels(socket, clientDHKey) {
     });
   });
 
-  // Симетричне шифрування
-  socket.on('symmetric-encryption', data => {
-    const encryptedMessage = data.message;
-    const decryptedMessage = symmetric.xorWithKey(
-      encryptedMessage,
-      symmetricKey,
-    );
-    console.log(`Зашифроване повідомлення клієнта: ${encryptedMessage}`);
-    console.log(`Розшифроване повідомлення клієнта: ${decryptedMessage}`);
-    socket.emit('symmetric-encryption', {
-      text: symmetric.xorWithKey(getGEaHLine(), symmetricKey),
-    });
-  });
-
   // Шифрування-розшифрування Діффі-Хеллман
   socket.on('diffie-hellman', data => {
     const encryptedMessage = data.message;
-    const decryptedMessage = symmetric.xorWithKey(
+    const decryptedMessage = keys.xorWithKey(
       encryptedMessage,
       clientDHKey,
     );
     console.log(`Зашифроване повідомлення (Діффі-Хеллман): ${encryptedMessage}`);
     console.log(`Розшифроване повідомлення (Діффі-Хеллман): ${decryptedMessage}`);
-    socket.emit('diffie-hellman', { text: symmetric.xorWithKey(getGEaHLine(), clientDHKey) });
+    socket.emit('diffie-hellman', { text: keys.xorWithKey(getGEaHLine(), clientDHKey) });
   });
 }
 
