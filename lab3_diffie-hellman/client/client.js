@@ -1,4 +1,4 @@
-const keys = require('../modules/keys.module');
+const xorkey = require('../modules/xor.key.module');
 const DH = require('../modules/diffie.hellman.module');
 const yargs = require('yargs');
 const io = require('socket.io-client');
@@ -65,7 +65,7 @@ socket.on('connect', () => {
 
     // Встановити метод шифрування
     encryptionMethods['diffie-hellman'] = input =>
-      keys.xorWithKey(input, diffieHellmanKey);
+      xorkey.xorWithKey(input, diffieHellmanKey);
 
     setUpSocketChannels(socket);
     console.log('Для списку доступних команд наберіть ":help"');

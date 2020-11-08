@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-const keys = require('../modules/keys.module');
+const xorkey = require('../modules/xor.key.module');
 const DH = require('../modules/diffie.hellman.module');
 
 // Аргументи командної стрічки
@@ -79,13 +79,13 @@ function enableChannels(socket, clientDHKey) {
   // Шифрування-розшифрування Діффі-Хеллман
   socket.on('diffie-hellman', data => {
     const encryptedMessage = data.message;
-    const decryptedMessage = keys.xorWithKey(
+    const decryptedMessage = xorkey.xorWithKey(
       encryptedMessage,
       clientDHKey,
     );
     console.log(`Зашифроване повідомлення (Діффі-Хеллман): ${encryptedMessage}`);
     console.log(`Розшифроване повідомлення (Діффі-Хеллман): ${decryptedMessage}`);
-    socket.emit('diffie-hellman', { text: keys.xorWithKey(getGEaHLine(), clientDHKey) });
+    socket.emit('diffie-hellman', { text: xorkey.xorWithKey(getGEaHLine(), clientDHKey) });
   });
 }
 
