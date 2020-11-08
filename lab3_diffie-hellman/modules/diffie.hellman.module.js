@@ -58,7 +58,6 @@ const pow = (x, y, p) => {
   return result;
 };
 
-// get's the set of prime factors for a prime p
 const findPrimeFactors = p => {
   let s = new Set();
   while (p % 2 === 0) {
