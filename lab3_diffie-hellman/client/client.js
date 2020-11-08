@@ -142,7 +142,7 @@ function checkForCommands(input) {
 
   const helpMessage =
     'Доступні команди:' +
-    '\n\t:dh - режим шифрування Діффі-Хеллман - diffie-hellman' +
+    '\n\t:dh - режим шифрування із передачею ключа Діффі-Хеллман - diffie-hellman' +
     '\n\t:pt - режим простий текст без шифрування - plain-text' +
     '\n\t:help - список команд' +
     '\n\t:exit - вийти з програми';
